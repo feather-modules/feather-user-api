@@ -1,3 +1,4 @@
+import FeatherOpenAPIKit
 import XCTest
 
 @testable import UserAPIKit

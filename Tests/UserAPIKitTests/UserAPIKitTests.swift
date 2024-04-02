@@ -1,6 +1,5 @@
-import XCTest
-
 import UserAPIKit
+import XCTest
 
 final class UserAPIKitTests: XCTestCase {
 

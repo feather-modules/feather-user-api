@@ -1,5 +1,7 @@
-import UserAPIKit
 import XCTest
+
+@testable import FeatherOpenAPIKit
+@testable import UserAPIKit
 
 final class UserAPIKitTests: XCTestCase {
 

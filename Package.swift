@@ -45,7 +45,6 @@ let package = Package(
         .testTarget(
             name: "UserAPIKitTests",
             dependencies: [
-                .product(name: "FeatherOpenAPIKit", package: "feather-openapi-kit"),
                 .target(name: "UserAPIKit")
             ]
         ),

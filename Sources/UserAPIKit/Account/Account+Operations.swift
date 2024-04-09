@@ -52,20 +52,17 @@ extension User.Account {
             ]
         }
 
-        enum BulkDelete: Operation {
+        enum Delete: Operation {
             static let security: [SecurityScheme.Type] = .shared
             static let tag: Tag.Type = Tags.Main.self
-            static let summary = "Bulk delete User Accounts"
-            static let description = "Removes multiple User Accounts at once"
-            static let requestBody: RequestBody.Type? = RequestBodies
-                .BulkDelete.self
+            static let summary = "Delete one User Account"
+            static let description = "Delete one User Account using identifier"
             static let responses: [OperationResponse] = [
                 .noContent,
                 .badRequest,
                 .unauthorized,
                 .forbidden,
                 .notFound,
-                .unsupportedMediaType,
                 .unprocessableContent,
             ]
         }

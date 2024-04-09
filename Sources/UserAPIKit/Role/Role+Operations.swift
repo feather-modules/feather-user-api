@@ -39,20 +39,17 @@ extension User.Role {
             ]
         }
 
-        enum BulkDelete: Operation {
+        enum Delete: Operation {
             static let security: [SecurityScheme.Type] = .shared
             static let tag: Tag.Type = Tags.Main.self
-            static let summary = "Bulk delete User Roles"
-            static let description = "Removes multiple User Roles at once"
-            static let requestBody: RequestBody.Type? = RequestBodies.BulkDelete
-                .self
+            static let summary = "Delete one User Role"
+            static let description = "Delete one User Role using identifier"
             static let responses: [OperationResponse] = [
                 .noContent,
                 .badRequest,
                 .unauthorized,
                 .forbidden,
                 .notFound,
-                .unsupportedMediaType,
                 .unprocessableContent,
             ]
         }

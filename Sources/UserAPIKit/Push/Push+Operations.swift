@@ -70,6 +70,5 @@ extension User.Push {
             ]
         }
 
-        
     }
 }

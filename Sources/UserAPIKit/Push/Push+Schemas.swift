@@ -40,7 +40,8 @@ extension User.Push {
 
         enum Recipients: ArraySchema {
             static let description = "Push message recipients to send"
-            public static let items: Schema.Type = User.PushToken.Schemas.Id.self
+            public static let items: Schema.Type = User.PushToken.Schemas.Id
+                .self
         }
 
         // MARK: -
@@ -92,7 +93,7 @@ extension User.Push {
                 .init("title", Title.self),
                 .init("message", Message.self),
                 .init("topic", Topic.self),
-                .init("date", Date.self)
+                .init("date", Date.self),
             ]
         }
 

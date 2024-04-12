@@ -1,22 +1,21 @@
 import FeatherOpenAPIKit
 
-extension User.Push {
+extension User.PushToken {
 
     enum PathItems {
 
-        enum Main: PathItem {
-            static let path: Path = User.Push.path
-            static let get: Operation.Type? = Operations.List.self
+        enum Tokens: PathItem {
+            static let path: Path = User.PushToken.path
             static let post: Operation.Type? = Operations.Create.self
         }
 
         enum Identified: PathItem {
-            static let path: Path = Main.path / Parameters.Id.path
+            static let path: Path = Tokens.path / Parameters.Id.path
             static let parameters: [Parameter.Type] = [
                 Parameters.Id.self
             ]
+            static let put: Operation.Type? = Operations.Update.self
             static let delete: Operation.Type? = Operations.Delete.self
-            static let get: Operation.Type? = Operations.Detail.self
         }
     }
 }

@@ -1,44 +1,39 @@
+import FeatherAPIKit
 import FeatherOpenAPIKit
 
 extension User.Push {
 
     enum Operations {
 
-        enum Create: Operation {
+        enum List: Operation {
             static let security: [SecurityScheme.Type] = .shared
             static let tag: Tag.Type = Tags.Main.self
-            static let summary = "Create a push token object"
-            static let description = "Create a push token object"
-            static let requestBody: RequestBody.Type? = RequestBodies.Create
-                .self
+            static let summary = "List push messages"
+            static let description = "List available push messages"
+            static let parameters: [Parameter.Type] =
+                [
+                    Parameters.List.Sort.self
+                ] + Feather.Core.Parameters.List.parameters
             static let responses: [OperationResponse] = [
-                .ok(Responses.Create.self),
+                .ok(Responses.List.self),
                 .badRequest,
                 .unauthorized,
                 .forbidden,
-                .unsupportedMediaType,
-                .unprocessableContent,
             ]
         }
 
-        // MARK: -
-
-        enum Update: Operation {
+        enum Create: Operation {
             static let security: [SecurityScheme.Type] = .shared
             static let tag: Tag.Type = Tags.Main.self
-            static let summary = "Updates a push token object"
-            static let description = "Updates a push token object"
-            static let parameters: [Parameter.Type] = [
-                Parameters.Id.self
-            ]
-            static let requestBody: RequestBody.Type? = RequestBodies.Update
+            static let summary = "Create a push message"
+            static let description = "Creates a new push message"
+            static let requestBody: RequestBody.Type? = RequestBodies.Create
                 .self
             static let responses: [OperationResponse] = [
-                .ok(Responses.Update.self),
+                .ok(Responses.Detail.self),
                 .badRequest,
                 .unauthorized,
                 .forbidden,
-                .notFound,
                 .unsupportedMediaType,
                 .unprocessableContent,
             ]
@@ -47,18 +42,34 @@ extension User.Push {
         enum Delete: Operation {
             static let security: [SecurityScheme.Type] = .shared
             static let tag: Tag.Type = Tags.Main.self
-            static let summary = "Delete a push token object"
-            static let description = "Delete a push token object"
-            static let parameters: [Parameter.Type] = [
-                Parameters.Id.self
-            ]
+            static let summary = "Delete one push message"
+            static let description = "Delete one push message using identifier"
             static let responses: [OperationResponse] = [
                 .noContent,
                 .badRequest,
                 .unauthorized,
                 .forbidden,
                 .notFound,
+                .unprocessableContent,
             ]
         }
+
+        // MARK: -
+
+        enum Detail: Operation {
+            static let security: [SecurityScheme.Type] = .shared
+            static let tag: Tag.Type = Tags.Main.self
+            static let summary = "Push message details"
+            static let description = "Get the details of a push message"
+            static let responses: [OperationResponse] = [
+                .ok(Responses.Detail.self),
+                .badRequest,
+                .unauthorized,
+                .forbidden,
+                .notFound,
+            ]
+        }
+
+        
     }
 }

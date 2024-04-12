@@ -84,11 +84,6 @@ extension User.Account {
             ]
         }
 
-        public enum BulkDelete: ArraySchema {
-            public static let description = "The list of the ids to be deleted."
-            public static let items: Schema.Type = Id.self
-        }
-
         public enum Create: ObjectSchema {
             public static let description = ""
             public static let properties: [ObjectSchemaProperty] = [

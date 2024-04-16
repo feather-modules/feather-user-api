@@ -14,7 +14,7 @@ let package = Package(
         .library(name: "UserAPIKit", targets: ["UserAPIKit"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/feather-framework/feather-openapi-kit", .upToNextMinor(from: "0.9.0")),
+        .package(url: "https://github.com/feather-framework/feather-openapi-kit", .upToNextMinor(from: "0.9.2")),
         .package(url: "https://github.com/feather-framework/feather-api-kit", .upToNextMinor(from: "0.1.0")),
         .package(url: "https://github.com/feather-modules/feather-system-api", .upToNextMinor(from: "0.2.0")),
         .package(url: "https://github.com/jpsim/Yams", from: "5.0.0"),

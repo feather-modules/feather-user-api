@@ -4,14 +4,14 @@ extension User.Push {
 
     enum Responses {
 
-        enum Create: JSONResponse {
-            static let description = "Create a push token object"
-            static let schema: Schema.Type = Schemas.Create.self
+        enum List: JSONResponse {
+            static let description = "Push message list object"
+            static let schema: Schema.Type = Schemas.List.self
         }
 
-        enum Update: JSONResponse {
-            static let description = "Updates a push token object"
-            static let schema: Schema.Type = Schemas.Update.self
+        enum Detail: JSONResponse {
+            static let description = "Push message detail object"
+            static let schema: Schema.Type = Schemas.Detail.self
         }
 
     }

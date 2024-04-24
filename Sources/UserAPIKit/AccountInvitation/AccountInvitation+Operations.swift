@@ -43,7 +43,8 @@ extension User.AccountInvitation {
             static let security: [SecurityScheme.Type] = .shared
             static let tag: Tag.Type = Tags.Main.self
             static let summary = "Delete one user account invitation"
-            static let description = "Delete one user account invitation using identifier"
+            static let description =
+                "Delete one user account invitation using identifier"
             static let responses: [OperationResponse] = [
                 .noContent,
                 .badRequest,
@@ -60,7 +61,8 @@ extension User.AccountInvitation {
             static let security: [SecurityScheme.Type] = .shared
             static let tag: Tag.Type = Tags.Main.self
             static let summary = "User account invitation details"
-            static let description = "Get the details of a user account invitation"
+            static let description =
+                "Get the details of a user account invitation"
             static let responses: [OperationResponse] = [
                 .ok(Responses.Detail.self),
                 .badRequest,

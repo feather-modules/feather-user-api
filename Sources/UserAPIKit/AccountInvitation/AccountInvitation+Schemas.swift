@@ -6,7 +6,8 @@ extension User.AccountInvitation {
     public enum Schemas {
 
         public enum Id: IDSchema {
-            public static let description = "Unique user account invitation identifier"
+            public static let description =
+                "Unique user account invitation identifier"
         }
 
         public enum Email: EmailSchema {
@@ -35,7 +36,8 @@ extension User.AccountInvitation {
         public enum List: ObjectSchema {
 
             public enum Item: ObjectSchema {
-                public static let description = "User account invitation list item"
+                public static let description =
+                    "User account invitation list item"
                 public static let properties: [ObjectSchemaProperty] = [
                     .init("accountId", Id.self),
                     .init("email", Email.self),
@@ -43,7 +45,8 @@ extension User.AccountInvitation {
             }
 
             public enum Items: ArraySchema {
-                public static let description = "User account invitation list items"
+                public static let description =
+                    "User account invitation list items"
                 public static let items: Schema.Type = Item.self
             }
 

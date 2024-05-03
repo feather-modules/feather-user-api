@@ -11,7 +11,7 @@ extension User.Auth {
             static let requestBody: RequestBody.Type? = RequestBodies.Request
                 .self
             static let responses: [OperationResponse] = [
-                .ok(User.Account.Responses.Detail.self),
+                .ok(User.Auth.Responses.Response.self),
                 .badRequest,
                 .unauthorized,
                 .forbidden,

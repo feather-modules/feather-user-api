@@ -5,7 +5,7 @@ extension User.AccountInvitation {
     public enum Parameters {
 
         public enum Id: PathParameter {
-            public static let name = "accountId"
+            public static let name = "id"
             public static let description = "User account invitation identifier"
             public static let schema: Schema.Type = Schemas.Id.self
         }

@@ -46,6 +46,7 @@ extension User.PushToken {
         enum Create: ObjectSchema {
             static let description = ""
             static let properties: [ObjectSchemaProperty] = [
+                .init("accountId", User.Account.Schemas.Id.self),
                 .init("platform", Platform.self),
                 .init("token", Token.self),
             ]

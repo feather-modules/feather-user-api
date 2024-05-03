@@ -39,7 +39,7 @@ extension User.AccountInvitation {
                 public static let description =
                     "User account invitation list item"
                 public static let properties: [ObjectSchemaProperty] = [
-                    .init("accountId", Id.self),
+                    .init("id", Id.self),
                     .init("email", Email.self),
                 ]
             }
@@ -69,7 +69,7 @@ extension User.AccountInvitation {
         public enum Reference: ObjectSchema {
             public static let description = ""
             public static let properties: [ObjectSchemaProperty] = [
-                .init("accountId", Id.self),
+                .init("id", Id.self),
                 .init("email", Email.self),
             ]
         }
@@ -77,7 +77,7 @@ extension User.AccountInvitation {
         public enum Detail: ObjectSchema {
             public static let description = ""
             public static let properties: [ObjectSchemaProperty] = [
-                .init("accountId", Id.self),
+                .init("id", Id.self),
                 .init("email", Email.self),
                 .init("token", Token.self),
                 .init("expiration", Expiration.self),

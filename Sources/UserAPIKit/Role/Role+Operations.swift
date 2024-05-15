@@ -75,9 +75,6 @@ extension User.Role {
             static let tag: Tag.Type = Tags.Main.self
             static let summary = "Update a User Role"
             static let description = "Updates a User Role"
-            static let parameters: [Parameter.Type] = [
-                Parameters.Key.self
-            ]
             static let requestBody: RequestBody.Type? = RequestBodies.Update
                 .self
             static let responses: [OperationResponse] = [
@@ -96,9 +93,6 @@ extension User.Role {
             static let tag: Tag.Type = Tags.Main.self
             static let summary = "Patch a User Role"
             static let description = "Patch a given User Role"
-            static let parameters: [Parameter.Type] = [
-                Parameters.Key.self
-            ]
             static let requestBody: RequestBody.Type? = RequestBodies.Patch.self
             static let responses: [OperationResponse] = [
                 .ok(Responses.Detail.self),

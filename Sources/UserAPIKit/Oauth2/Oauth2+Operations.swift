@@ -8,7 +8,13 @@ extension User.Oauth2 {
             static let tag: Tag.Type = Tags.Main.self
             static let summary = "start authorize"
             static let description = "start authorize"
-            static let requestBody: RequestBody.Type? = RequestBodies.AuthorizeGetRequest.self
+            static let parameters: [Parameter.Type] = [
+                Parameters.ClientID.self,
+                Parameters.RedirectURI.self,
+                Parameters.Scope.self,
+                Parameters.State.self,
+                Parameters.ResponseType.self
+            ]
             static let responses: [OperationResponse] = [
                 .ok,
                 .badRequest,

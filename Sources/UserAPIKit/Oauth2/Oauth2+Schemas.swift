@@ -81,17 +81,6 @@ extension User.Oauth2 {
                 "uiu9879khh"
             ]
         }
-         
-        enum AuthorizeGetRequest: ObjectSchema {
-            static let description = ""
-            static let properties: [ObjectSchemaProperty] = [
-                .init("clientID", ClientID.self),
-                .init("redirectURI", RedirectURI.self),
-                .init("scope", Scope.self),
-                .init("state", State.self, required: false),
-                .init("responseType", ResponseType.self),
-            ]
-        }
         
         enum AuthorizePostRequest: ObjectSchema {
             static let description = ""

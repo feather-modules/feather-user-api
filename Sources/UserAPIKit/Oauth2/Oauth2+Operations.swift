@@ -9,8 +9,8 @@ extension User.Oauth2 {
             static let summary = "start authorize"
             static let description = "start authorize"
             static let parameters: [Parameter.Type] = [
-                Parameters.ClientID.self,
-                Parameters.RedirectURI.self,
+                Parameters.ClientId.self,
+                Parameters.RedirectUrl.self,
                 Parameters.Scope.self,
                 Parameters.State.self,
                 Parameters.ResponseType.self

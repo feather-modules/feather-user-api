@@ -4,17 +4,17 @@ extension User.Oauth2 {
 
     enum Parameters {
 
-        enum ClientID: QueryParameter {
-            static let name = "clientID"
-            static let description = "clientID"
-            static let schema: Schema.Type = Schemas.ClientID.self
+        enum ClientId: QueryParameter {
+            static let name = "clientId"
+            static let description = "clientId"
+            static let schema: Schema.Type = Schemas.ClientId.self
             static let required = false
         }
         
-        enum RedirectURI: QueryParameter {
-            static let name = "redirectURI"
-            static let description = "redirectURI"
-            static let schema: Schema.Type = Schemas.RedirectURI.self
+        enum RedirectUrl: QueryParameter {
+            static let name = "redirectUrl"
+            static let description = "Url to redirect to"
+            static let schema: Schema.Type = Schemas.RedirectUrl.self
             static let required = false
         }
         

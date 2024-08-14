@@ -5,14 +5,14 @@ extension User.Oauth2 {
     
     enum Schemas {
         
-        enum ClientID: TextSchema {
+        enum ClientId: TextSchema {
             static let description = "The public identifier for the client"
             static let examples = [
                 "asddfh"
             ]
         }
         
-        enum RedirectURI: TextSchema {
+        enum RedirectUrl: TextSchema {
             static let description = "The url to redirect to after successful request"
             static let examples = [
                 "url.com"
@@ -92,8 +92,8 @@ extension User.Oauth2 {
         enum AuthorizePostRequest: ObjectSchema {
             static let description = ""
             static let properties: [ObjectSchemaProperty] = [
-                .init("clientID", ClientID.self, required: false),
-                .init("redirectURI", RedirectURI.self, required: false),
+                .init("clientId", ClientId.self, required: false),
+                .init("redirectUrl", RedirectUrl.self, required: false),
                 .init("scope", Scope.self, required: false),
                 .init("state", State.self, required: false),
                 .init("responseType", ResponseType.self, required: false),
@@ -108,8 +108,8 @@ extension User.Oauth2 {
             static let properties: [ObjectSchemaProperty] = [
                 .init("grantType", GrantType.self, required: false),
                 .init("code", Code.self, required: false),
-                .init("clientID", ClientID.self, required: false),
-                .init("redirectURI", RedirectURI.self, required: false),
+                .init("clientId", ClientId.self, required: false),
+                .init("redirectUrl", RedirectUrl.self, required: false),
                 .init("codeVerifier", CodeVerifier.self, required: false),
             ]
         }

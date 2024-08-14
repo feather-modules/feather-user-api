@@ -82,6 +82,13 @@ extension User.Oauth2 {
             ]
         }
         
+        enum LocationHeader: TextSchema {
+            static let description = "Location header"
+            static let examples: [String] = [
+                "http:localhost/redirect?code=asdasfg"
+            ]
+        }
+        
         enum AuthorizePostRequest: ObjectSchema {
             static let description = ""
             static let properties: [ObjectSchemaProperty] = [
@@ -113,7 +120,7 @@ extension User.Oauth2 {
                 .init("jwt", JWT.self),
             ]
         }
-        
+                
     }
     
 }

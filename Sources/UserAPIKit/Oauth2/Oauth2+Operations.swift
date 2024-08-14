@@ -17,8 +17,8 @@ extension User.Oauth2 {
             ]
             static let responses: [OperationResponse] = [
                 .ok,
+                .found(Responses.RedirectResponse.self),
                 .badRequest,
-                .found,
                 .unauthorized,
                 .forbidden
             ]
@@ -30,9 +30,8 @@ extension User.Oauth2 {
             static let description = "get authorize code and return it"
             static let requestBody: RequestBody.Type? = RequestBodies.AuthorizePostRequest.self
             static let responses: [OperationResponse] = [
-                .ok,
+                .found(Responses.RedirectResponse.self),
                 .badRequest,
-                .found,
                 .unauthorized,
                 .forbidden
             ]
@@ -46,7 +45,6 @@ extension User.Oauth2 {
             static let responses: [OperationResponse] = [
                 .ok(Responses.ExchangePostResponse.self),
                 .badRequest,
-                .found,
                 .unauthorized,
                 .forbidden
             ]

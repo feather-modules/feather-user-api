@@ -4,7 +4,7 @@ extension User.Oauth2 {
 
     enum Responses {
         
-        enum RedirectResponse: JSONResponse {
+        enum RedirectResponse: Response {
             static let description = "Redirect response"
             static let headers: [Header.Type] = [
                 Headers.Location.self

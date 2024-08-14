@@ -92,12 +92,12 @@ extension User.Oauth2 {
         enum AuthorizePostRequest: ObjectSchema {
             static let description = ""
             static let properties: [ObjectSchemaProperty] = [
-                .init("clientID", ClientID.self),
-                .init("redirectURI", RedirectURI.self),
-                .init("scope", Scope.self),
+                .init("clientID", ClientID.self, required: false),
+                .init("redirectURI", RedirectURI.self, required: false),
+                .init("scope", Scope.self, required: false),
                 .init("state", State.self, required: false),
-                .init("responseType", ResponseType.self),
-                .init("accountId", User.Account.Schemas.Id.self),
+                .init("responseType", ResponseType.self, required: false),
+                .init("accountId", User.Account.Schemas.Id.self, required: false),
                 .init("codeChallenge", CodeChallenge.self, required: false),
                 .init("codeChallengeMethod", CodeChallengeMethod.self, required: false),
             ]
@@ -106,10 +106,10 @@ extension User.Oauth2 {
         enum ExchangePostRequest: ObjectSchema {
             static let description = ""
             static let properties: [ObjectSchemaProperty] = [
-                .init("grantType", GrantType.self),
-                .init("code", Code.self),
-                .init("clientID", ClientID.self),
-                .init("redirectURI", RedirectURI.self),
+                .init("grantType", GrantType.self, required: false),
+                .init("code", Code.self, required: false),
+                .init("clientID", ClientID.self, required: false),
+                .init("redirectURI", RedirectURI.self, required: false),
                 .init("codeVerifier", CodeVerifier.self, required: false),
             ]
         }

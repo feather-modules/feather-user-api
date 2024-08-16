@@ -39,7 +39,6 @@ extension User.Oauth2 {
         }
         
         enum Exchange: Operation {
-            static let security: [SecurityScheme.Type] = .shared
             static let tag: Tag.Type = Tags.Main.self
             static let summary = "exchange authorization code"
             static let description = "exchange authorization code to a JWT"

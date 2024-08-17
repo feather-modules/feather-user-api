@@ -1,7 +1,7 @@
 import FeatherOpenAPIKit
 
 extension User {
-    public enum Oauth2: Component {
+    public enum Oauth: Component {
         static let path: Path = User.path / "oauth"
     }
 }

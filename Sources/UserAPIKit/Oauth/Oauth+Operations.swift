@@ -34,6 +34,7 @@ extension User.Oauth {
                 .found(Responses.RedirectResponse.self),
                 .badRequest,
                 .unauthorized,
+                .conflict,
                 .forbidden
             ]
         }
@@ -47,6 +48,7 @@ extension User.Oauth {
                 .ok(Responses.ExchangePostResponse.self),
                 .badRequest,
                 .unauthorized,
+                .conflict,
                 .forbidden
             ]
         }

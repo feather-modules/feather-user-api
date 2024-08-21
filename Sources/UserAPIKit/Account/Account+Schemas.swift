@@ -1,5 +1,6 @@
 import FeatherAPIKit
 import FeatherOpenAPIKit
+import SystemAPIKit
 
 extension User.Account {
 
@@ -32,6 +33,11 @@ extension User.Account {
         public enum RoleKeys: ArraySchema {
             public static let description = "User role keys"
             public static let items: Schema.Type = User.Role.Schemas.Key.self
+        }
+        
+        enum Permissions: ArraySchema {
+            static let items: Schema.Type = System.Permission.Schemas.Key.self
+            static let description = ""
         }
 
         // MARK: - list
@@ -81,6 +87,7 @@ extension User.Account {
                 .init("id", Id.self),
                 .init("email", Email.self),
                 .init("roles", Roles.self),
+                .init("permissions", Permissions.self),
             ]
         }
 
@@ -90,6 +97,7 @@ extension User.Account {
                 .init("email", Email.self),
                 .init("password", Password.self),
                 .init("roleKeys", RoleKeys.self),
+                .init("permissions", Permissions.self),
             ]
         }
 

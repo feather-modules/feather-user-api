@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/feather-framework/feather-api-kit",
       "state" : {
-        "branch" : "feature/http302",
-        "revision" : "ab79cc4cf4c7e166777e57507ef955be434af3ce"
+        "revision" : "4bb59040e8e5ff6f7c1d7aead271b7c94b72c4ac",
+        "version" : "0.1.1"
       }
     },
     {
@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/feather-framework/feather-openapi-kit",
       "state" : {
-        "branch" : "feature/http302",
-        "revision" : "ff81cf5fd196b472de876be7e3390c27873a4a9c"
+        "revision" : "cec2d2e85ea01283d6f23c4daa4dfd11b748022c",
+        "version" : "0.9.6"
       }
     },
     {

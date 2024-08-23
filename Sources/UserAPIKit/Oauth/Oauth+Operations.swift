@@ -18,6 +18,7 @@ extension User.Oauth {
             static let responses: [OperationResponse] = [
                 .ok,
                 .found(Responses.RedirectResponse.self),
+                .seeOther(Responses.RedirectResponse.self),
                 .badRequest,
                 .unauthorized,
                 .forbidden
@@ -32,6 +33,7 @@ extension User.Oauth {
             static let requestBody: RequestBody.Type? = RequestBodies.AuthorizePostRequest.self
             static let responses: [OperationResponse] = [
                 .found(Responses.RedirectResponse.self),
+                .seeOther(Responses.RedirectResponse.self),
                 .badRequest,
                 .unauthorized,
                 .conflict,

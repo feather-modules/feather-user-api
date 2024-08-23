@@ -3,7 +3,7 @@ import FeatherOpenAPIKit
 extension User.Oauth {
 
     enum Responses {
-        
+
         enum RedirectResponse: Response {
             static let description = "Redirect response"
             static let headers: [Header.Type] = [
@@ -11,9 +11,9 @@ extension User.Oauth {
             ]
         }
 
-        enum ExchangePostResponse: JSONResponse {
+        enum TokenPostResponse: JSONResponse {
             static let description = "code exchange response object"
-            static let schema: Schema.Type = Schemas.ExchangePostResponse.self
+            static let schema: Schema.Type = Schemas.TokenPostResponse.self
         }
 
     }

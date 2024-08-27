@@ -18,7 +18,6 @@ extension User.Oauth {
             static let responses: [OperationResponse] = [
                 .ok,
                 .found(Responses.RedirectResponse.self),
-                .seeOther(Responses.RedirectResponse.self),
                 .badRequest,
                 .unauthorized,
                 .forbidden,
@@ -31,11 +30,15 @@ extension User.Oauth {
             static let summary = "get authorize code"
             static let description =
                 "get authorize code and return it with redirect"
+            
+            static let parameters: [Parameter.Type] = [
+                Parameters.ReturnRedirectUri.self
+            ]
             static let requestBody: RequestBody.Type? = RequestBodies
                 .AuthorizePostRequest.self
             static let responses: [OperationResponse] = [
+                .ok(Responses.Redirect200Response.self),
                 .found(Responses.RedirectResponse.self),
-                .seeOther(Responses.RedirectResponse.self),
                 .badRequest,
                 .unauthorized,
                 .conflict,

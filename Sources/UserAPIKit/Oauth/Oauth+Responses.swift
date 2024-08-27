@@ -10,6 +10,11 @@ extension User.Oauth {
                 Headers.Location.self
             ]
         }
+        
+        enum Redirect200Response: Response {
+            static let description = "Redirect response"
+            static let schema: Schema.Type = Schemas.Redirect200Response.self
+        }
 
         enum TokenPostResponse: JSONResponse {
             static let description = "code exchange response object"

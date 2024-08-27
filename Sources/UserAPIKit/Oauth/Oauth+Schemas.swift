@@ -75,6 +75,18 @@ extension User.Oauth {
                 "http://localhost:8080/redirect?code=asdasfg"
             ]
         }
+        
+        enum ReturnRedirectUri: BooleanSchema {
+            static let description = "return redirect with 200 or 302"
+            static let defaultValue = false
+        }
+        
+        enum Redirect200Response: ObjectSchema {
+            static let description = ""
+            static let properties: [ObjectSchemaProperty] = [
+                .init("redirect_uri", RedirectUri.self, required: false),
+            ]
+        }
 
         enum AuthorizePostRequest: ObjectSchema {
             static let description = ""
@@ -91,7 +103,7 @@ extension User.Oauth {
                 ),
             ]
         }
-
+        
         enum TokenPostRequest: ObjectSchema {
             static let description = ""
             static let properties: [ObjectSchemaProperty] = [

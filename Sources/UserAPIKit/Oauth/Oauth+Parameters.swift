@@ -38,6 +38,13 @@ extension User.Oauth {
             static let schema: Schema.Type = Schemas.ResponseType.self
             static let required = false
         }
+        
+        enum ReturnRedirectUri: QueryParameter {
+            static let name = "return_redirect_uri"
+            static let description = "true/false to return with 200, not with 302"
+            static let schema: Schema.Type = Schemas.ReturnRedirectUri.self
+            static let required = false
+        }
     }
 
 }

@@ -2,7 +2,7 @@ import FeatherOpenAPIKit
 
 extension User.Account {
 
-    enum Responses {
+    public enum Responses: Component {
 
         enum Detail: JSONResponse {
             static let description = "User Account detail object"

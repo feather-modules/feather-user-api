@@ -4,7 +4,7 @@ import SystemAPIKit
 
 extension User.Account {
 
-    public enum Schemas {
+    public enum Schemas: Component {
 
         public enum Id: IDSchema {
             public static let description = "Unique user account identifier"

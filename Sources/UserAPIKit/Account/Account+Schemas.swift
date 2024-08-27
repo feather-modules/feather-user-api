@@ -4,7 +4,7 @@ import SystemAPIKit
 
 extension User.Account {
 
-    public enum Schemas {
+    public enum Schemas: Component {
 
         public enum Id: IDSchema {
             public static let description = "Unique user account identifier"
@@ -34,7 +34,7 @@ extension User.Account {
             public static let description = "User role keys"
             public static let items: Schema.Type = User.Role.Schemas.Key.self
         }
-        
+
         enum Permissions: ArraySchema {
             static let items: Schema.Type = System.Permission.Schemas.Key.self
             static let description = ""

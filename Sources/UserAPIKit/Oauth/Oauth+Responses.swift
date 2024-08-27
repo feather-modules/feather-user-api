@@ -3,7 +3,7 @@ import FeatherOpenAPIKit
 extension User.Oauth {
 
     enum Responses {
-        
+
         enum RedirectResponse: Response {
             static let description = "Redirect response"
             static let headers: [Header.Type] = [

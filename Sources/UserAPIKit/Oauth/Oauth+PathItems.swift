@@ -3,7 +3,7 @@ import FeatherOpenAPIKit
 extension User.Oauth {
 
     enum PathItems {
-        
+
         enum Exchange: PathItem {
             static let path: Path = User.Oauth.path / "token"
             static let post: Operation.Type? = Operations.Exchange.self

@@ -2,7 +2,7 @@ import FeatherOpenAPIKit
 
 extension User.Role {
 
-    enum Parameters {
+    public enum Parameters: Component {
 
         enum Key: PathParameter {
             static let name = "roleKey"

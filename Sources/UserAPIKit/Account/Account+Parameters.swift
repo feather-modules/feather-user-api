@@ -2,7 +2,7 @@ import FeatherOpenAPIKit
 
 extension User.Account {
 
-    public enum Parameters {
+    public enum Parameters: Component {
 
         public enum Id: PathParameter {
             public static let name = "accountId"

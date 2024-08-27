@@ -13,14 +13,14 @@ extension User.Oauth {
                 Parameters.RedirectUrl.self,
                 Parameters.Scope.self,
                 Parameters.State.self,
-                Parameters.ResponseType.self
+                Parameters.ResponseType.self,
             ]
             static let responses: [OperationResponse] = [
                 .ok,
                 .found(Responses.RedirectResponse.self),
                 .badRequest,
                 .unauthorized,
-                .forbidden
+                .forbidden,
             ]
         }
 
@@ -29,29 +29,31 @@ extension User.Oauth {
             static let tag: Tag.Type = Tags.Main.self
             static let summary = "get authorize code"
             static let description = "get authorize code and return it"
-            static let requestBody: RequestBody.Type? = RequestBodies.AuthorizePostRequest.self
+            static let requestBody: RequestBody.Type? = RequestBodies
+                .AuthorizePostRequest.self
             static let responses: [OperationResponse] = [
                 .found(Responses.RedirectResponse.self),
                 .badRequest,
                 .unauthorized,
                 .conflict,
-                .forbidden
+                .forbidden,
             ]
         }
-        
+
         enum Exchange: Operation {
             static let tag: Tag.Type = Tags.Main.self
             static let summary = "exchange authorization code"
             static let description = "exchange authorization code to a JWT"
-            static let requestBody: RequestBody.Type? = RequestBodies.ExchangePostRequest.self
+            static let requestBody: RequestBody.Type? = RequestBodies
+                .ExchangePostRequest.self
             static let responses: [OperationResponse] = [
                 .ok(Responses.ExchangePostResponse.self),
                 .badRequest,
                 .unauthorized,
                 .conflict,
-                .forbidden
+                .forbidden,
             ]
         }
-        
+
     }
 }

@@ -35,7 +35,7 @@ extension User.OauthClient {
             ]
         }
 
-        enum RedirectUrl: TextSchema {
+        enum RedirectUri: TextSchema {
             static let description = "The client redirects to this url"
             static let examples = [
                 "http://localhost:8080/redirect"
@@ -119,7 +119,7 @@ extension User.OauthClient {
                 .init("name", Name.self),
                 .init("type", ClientType.self),
                 .init("clientSecret", ClientSecret.self),
-                .init("redirectUrl", RedirectUrl.self),
+                .init("redirectUri", RedirectUri.self),
                 .init("issuer", Issuer.self),
                 .init("subject", Subject.self),
                 .init("audience", Audience.self),
@@ -133,7 +133,7 @@ extension User.OauthClient {
             static let properties: [ObjectSchemaProperty] = [
                 .init("name", Name.self),
                 .init("type", ClientType.self),
-                .init("redirectUrl", RedirectUrl.self),
+                .init("redirectUri", RedirectUri.self),
                 .init("issuer", Issuer.self),
                 .init("subject", Subject.self),
                 .init("audience", Audience.self),
@@ -147,7 +147,7 @@ extension User.OauthClient {
                 .init("name", Name.self),
                 .init("type", ClientType.self),
                 .init("clientSecret", ClientSecret.self),
-                .init("redirectUrl", RedirectUrl.self),
+                .init("redirectUri", RedirectUri.self),
                 .init("issuer", Issuer.self),
                 .init("subject", Subject.self),
                 .init("audience", Audience.self),
@@ -163,7 +163,7 @@ extension User.OauthClient {
                 .init("name", Name.self, required: false),
                 .init("type", ClientType.self, required: false),
                 .init("clientSecret", ClientSecret.self, required: false),
-                .init("redirectUrl", RedirectUrl.self, required: false),
+                .init("redirectUri", RedirectUri.self, required: false),
                 .init("issuer", Issuer.self, required: false),
                 .init("subject", Subject.self, required: false),
                 .init("audience", Audience.self, required: false),

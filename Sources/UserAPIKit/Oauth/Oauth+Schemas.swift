@@ -19,7 +19,7 @@ extension User.Oauth {
             ]
         }
 
-        enum RedirectUrl: TextSchema {
+        enum RedirectUri: TextSchema {
             static let description =
                 "The url to redirect to after successful request"
             static let examples = [
@@ -79,13 +79,13 @@ extension User.Oauth {
         enum AuthorizePostRequest: ObjectSchema {
             static let description = ""
             static let properties: [ObjectSchemaProperty] = [
-                .init("clientId", ClientId.self, required: false),
-                .init("redirectUrl", RedirectUrl.self, required: false),
+                .init("client_id", ClientId.self, required: false),
+                .init("redirect_uri", RedirectUri.self, required: false),
                 .init("scope", Scope.self, required: false),
                 .init("state", State.self, required: false),
-                .init("responseType", ResponseType.self, required: false),
+                .init("response_type", ResponseType.self, required: false),
                 .init(
-                    "accountId",
+                    "user_id",
                     User.Account.Schemas.Id.self,
                     required: false
                 ),
@@ -95,11 +95,11 @@ extension User.Oauth {
         enum TokenPostRequest: ObjectSchema {
             static let description = ""
             static let properties: [ObjectSchemaProperty] = [
-                .init("grantType", GrantType.self, required: false),
-                .init("clientId", ClientId.self, required: false),
-                .init("clientSecret", ClientSecret.self, required: false),
+                .init("grant_type", GrantType.self, required: false),
+                .init("client_id", ClientId.self, required: false),
+                .init("client_secret", ClientSecret.self, required: false),
                 .init("code", Code.self, required: false),
-                .init("redirectUrl", RedirectUrl.self, required: false),
+                .init("redirect_uri", RedirectUri.self, required: false),
             ]
         }
 

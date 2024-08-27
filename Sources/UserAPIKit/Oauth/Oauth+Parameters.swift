@@ -5,16 +5,16 @@ extension User.Oauth {
     enum Parameters {
 
         enum ClientId: QueryParameter {
-            static let name = "clientId"
+            static let name = "client_id"
             static let description = "clientId"
             static let schema: Schema.Type = Schemas.ClientId.self
             static let required = false
         }
 
-        enum RedirectUrl: QueryParameter {
-            static let name = "redirectUrl"
+        enum RedirectUri: QueryParameter {
+            static let name = "redirect_uri"
             static let description = "Url to redirect to"
-            static let schema: Schema.Type = Schemas.RedirectUrl.self
+            static let schema: Schema.Type = Schemas.RedirectUri.self
             static let required = false
         }
 
@@ -33,7 +33,7 @@ extension User.Oauth {
         }
 
         enum ResponseType: QueryParameter {
-            static let name = "responseType"
+            static let name = "response_type"
             static let description = "responseType"
             static let schema: Schema.Type = Schemas.ResponseType.self
             static let required = false

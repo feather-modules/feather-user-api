@@ -18,6 +18,7 @@ extension User.Oauth {
             static let responses: [OperationResponse] = [
                 .ok,
                 .found(Responses.RedirectResponse.self),
+                .seeOther(Responses.RedirectResponse.self),
                 .badRequest,
                 .unauthorized,
                 .forbidden,
@@ -28,11 +29,13 @@ extension User.Oauth {
             static let security: [SecurityScheme.Type] = .shared
             static let tag: Tag.Type = Tags.Main.self
             static let summary = "get authorize code"
-            static let description = "get authorize code and return it"
+            static let description =
+                "get authorize code and return it with redirect"
             static let requestBody: RequestBody.Type? = RequestBodies
                 .AuthorizePostRequest.self
             static let responses: [OperationResponse] = [
                 .found(Responses.RedirectResponse.self),
+                .seeOther(Responses.RedirectResponse.self),
                 .badRequest,
                 .unauthorized,
                 .conflict,
@@ -40,14 +43,15 @@ extension User.Oauth {
             ]
         }
 
-        enum Exchange: Operation {
+        enum TokenReturn: Operation {
             static let tag: Tag.Type = Tags.Main.self
-            static let summary = "exchange authorization code"
-            static let description = "exchange authorization code to a JWT"
+            static let summary = "returns a JWT"
+            static let description =
+                "exchange authorization code for JWT or get server JWT"
             static let requestBody: RequestBody.Type? = RequestBodies
-                .ExchangePostRequest.self
+                .TokenPostRequest.self
             static let responses: [OperationResponse] = [
-                .ok(Responses.ExchangePostResponse.self),
+                .ok(Responses.TokenPostResponse.self),
                 .badRequest,
                 .unauthorized,
                 .conflict,

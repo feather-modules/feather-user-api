@@ -41,7 +41,7 @@ extension User.Oauth {
         
         enum ReturnRedirectUri: QueryParameter {
             static let name = "return_redirect_uri"
-            static let description = "true/false to return with 200, not with 302"
+            static let description = "true/false to return with 200/302"
             static let schema: Schema.Type = Schemas.ReturnRedirectUri.self
             static let required = false
         }

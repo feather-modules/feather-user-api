@@ -61,12 +61,24 @@ extension User.Oauth {
                 "uiu9879khh"
             ]
         }
-
-        enum JWT: TextSchema {
-            static let description = "JWT"
+        
+        enum AccessToken: TextSchema {
+            static let description = "Access token aka JWT"
             static let examples = [
                 "uiu9879khh.rtzrtz.6hdhfgh"
             ]
+        }
+        
+        enum TokenType: TextSchema {
+            static let description = "Access token type"
+            static let examples = [
+                "Bearer"
+            ]
+        }
+        
+        enum ExpiresIn: IntSchema {
+            static let description = "Expires in"
+            static let minimumValue: Int? = 3600
         }
 
         enum LocationHeader: TextSchema {
@@ -118,7 +130,10 @@ extension User.Oauth {
         enum TokenPostResponse: ObjectSchema {
             static let description = ""
             static let properties: [ObjectSchemaProperty] = [
-                .init("jwt", JWT.self)
+                .init("access_token", AccessToken.self),
+                .init("token_type", TokenType.self),
+                .init("expires_in", ExpiresIn.self),
+                .init("scope", Scope.self),
             ]
         }
 

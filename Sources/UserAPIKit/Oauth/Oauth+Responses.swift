@@ -17,7 +17,7 @@ extension User.Oauth {
         }
 
         enum TokenPostResponse: JSONResponse {
-            static let description = "code exchange response object"
+            static let description = "Code exchange response object"
             static let schema: Schema.Type = Schemas.TokenPostResponse.self
         }
 

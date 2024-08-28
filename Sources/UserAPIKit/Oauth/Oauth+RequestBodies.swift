@@ -4,7 +4,7 @@ extension User.Oauth {
 
     enum RequestBodies {
 
-        enum AuthorizePostRequest: JSONBody {
+        enum AuthorizePostRequest: FormBody {
             static let description = "get authorization code request body"
             static let schema: Schema.Type = Schemas.AuthorizePostRequest.self
         }

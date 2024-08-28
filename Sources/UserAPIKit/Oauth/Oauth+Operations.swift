@@ -16,7 +16,7 @@ extension User.Oauth {
                 Parameters.ResponseType.self,
             ]
             static let responses: [OperationResponse] = [
-                .ok,
+                .ok(Responses.Redirect200Response.self),
                 .found(Responses.RedirectResponse.self),
                 .badRequest,
                 .unauthorized,

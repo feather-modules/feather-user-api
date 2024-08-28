@@ -14,6 +14,7 @@ extension User.Oauth {
                 Parameters.Scope.self,
                 Parameters.State.self,
                 Parameters.ResponseType.self,
+                Parameters.ReturnRedirectUri.self
             ]
             static let responses: [OperationResponse] = [
                 .ok(Responses.Redirect200Response.self),

@@ -41,6 +41,13 @@ extension User.OauthClient {
                 "http://localhost:8080/redirect"
             ]
         }
+        
+        enum LoginRedirectUri: TextSchema {
+            static let description = "Redirect uri for the login screen"
+            static let examples = [
+                "http://localhost:8080/redirect"
+            ]
+        }
 
         enum Issuer: TextSchema {
             static let description = "The issuer is the authorization server"
@@ -120,6 +127,7 @@ extension User.OauthClient {
                 .init("type", ClientType.self),
                 .init("clientSecret", ClientSecret.self),
                 .init("redirectUri", RedirectUri.self),
+                .init("loginRedirectUri", LoginRedirectUri.self),
                 .init("issuer", Issuer.self),
                 .init("subject", Subject.self),
                 .init("audience", Audience.self),
@@ -134,6 +142,7 @@ extension User.OauthClient {
                 .init("name", Name.self),
                 .init("type", ClientType.self),
                 .init("redirectUri", RedirectUri.self),
+                .init("loginRedirectUri", LoginRedirectUri.self),
                 .init("issuer", Issuer.self),
                 .init("subject", Subject.self),
                 .init("audience", Audience.self),
@@ -148,6 +157,7 @@ extension User.OauthClient {
                 .init("type", ClientType.self),
                 .init("clientSecret", ClientSecret.self),
                 .init("redirectUri", RedirectUri.self),
+                .init("loginRedirectUri", LoginRedirectUri.self),
                 .init("issuer", Issuer.self),
                 .init("subject", Subject.self),
                 .init("audience", Audience.self),
@@ -164,6 +174,7 @@ extension User.OauthClient {
                 .init("type", ClientType.self, required: false),
                 .init("clientSecret", ClientSecret.self, required: false),
                 .init("redirectUri", RedirectUri.self, required: false),
+                .init("loginRedirectUri", LoginRedirectUri.self, required: false),
                 .init("issuer", Issuer.self, required: false),
                 .init("subject", Subject.self, required: false),
                 .init("audience", Audience.self, required: false),

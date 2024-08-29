@@ -26,7 +26,6 @@ extension User.Oauth {
         }
 
         enum AuthorizePost: Operation {
-            static let security: [SecurityScheme.Type] = .shared
             static let tag: Tag.Type = Tags.Main.self
             static let summary = "get authorize code"
             static let description =

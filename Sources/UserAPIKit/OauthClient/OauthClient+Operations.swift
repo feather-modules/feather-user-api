@@ -26,7 +26,12 @@ extension User.OauthClient {
             static let security: [SecurityScheme.Type] = .shared
             static let tag: Tag.Type = Tags.Main.self
             static let summary = "Create an Oauth Client"
-            static let description = "Creates a new Oauth Client"
+            
+            static let description = """
+                                Creates a new Oauth Client.
+                                For the "app" type the ClientSecret is not generated and saved.
+                                For the "api" type "redirectUri" and "loginRedirectUri" are not needed and not saved if added.
+                            """
             static let requestBody: RequestBody.Type? = RequestBodies
                 .Create.self
             static let responses: [OperationResponse] = [

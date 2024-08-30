@@ -141,8 +141,8 @@ extension User.OauthClient {
             static let properties: [ObjectSchemaProperty] = [
                 .init("name", Name.self),
                 .init("type", ClientType.self),
-                .init("redirectUri", RedirectUri.self),
-                .init("loginRedirectUri", LoginRedirectUri.self),
+                .init("redirectUri", RedirectUri.self, required: false),
+                .init("loginRedirectUri", LoginRedirectUri.self, required: false),
                 .init("issuer", Issuer.self),
                 .init("subject", Subject.self),
                 .init("audience", Audience.self),
@@ -152,12 +152,11 @@ extension User.OauthClient {
         enum Update: ObjectSchema {
             static let description = ""
             static let properties: [ObjectSchemaProperty] = [
-                .init("clientId", ClientId.self),
                 .init("name", Name.self),
                 .init("type", ClientType.self),
-                .init("clientSecret", ClientSecret.self),
-                .init("redirectUri", RedirectUri.self),
-                .init("loginRedirectUri", LoginRedirectUri.self),
+                .init("clientSecret", ClientSecret.self, required: false),
+                .init("redirectUri", RedirectUri.self, required: false),
+                .init("loginRedirectUri", LoginRedirectUri.self, required: false),
                 .init("issuer", Issuer.self),
                 .init("subject", Subject.self),
                 .init("audience", Audience.self),
@@ -169,7 +168,6 @@ extension User.OauthClient {
         enum Patch: ObjectSchema {
             static let description = ""
             static let properties: [ObjectSchemaProperty] = [
-                .init("clientId", ClientId.self, required: false),
                 .init("name", Name.self, required: false),
                 .init("type", ClientType.self, required: false),
                 .init("clientSecret", ClientSecret.self, required: false),

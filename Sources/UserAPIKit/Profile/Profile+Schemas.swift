@@ -5,11 +5,7 @@ import SystemAPIKit
 extension User.Profile {
     
     public enum Schemas: Component {
-        
-        public enum Id: IDSchema {
-            public static let description = "Unique user profile identifier"
-        }
-        
+
         enum ImageKey: TextSchema {
             static let description = "Profile image key of the role"
             static let examples = [
@@ -81,9 +77,9 @@ extension User.Profile {
             public enum Item: ObjectSchema {
                 public static let description = "Profile account list item"
                 public static let properties: [ObjectSchemaProperty] = [
-                    .init("id", Id.self),
-                    .init("firstName", FirstName.self),
-                    .init("lastName", LastName.self),
+                    .init("accountId", User.Account.Schemas.Id.self),
+                    .init("firstName", FirstName.self, required: false),
+                    .init("lastName", LastName.self, required: false),
                 ]
             }
 
@@ -111,27 +107,26 @@ extension User.Profile {
         public enum Reference: ObjectSchema {
             public static let description = ""
             public static let properties: [ObjectSchemaProperty] = [
-                .init("id", Id.self),
-                .init("firstName", FirstName.self),
-                .init("lastName", LastName.self)
+                .init("accountId", User.Account.Schemas.Id.self),
+                .init("firstName", FirstName.self, required: false),
+                .init("lastName", LastName.self, required: false)
             ]
         }
 
         public enum Detail: ObjectSchema {
             public static let description = ""
             public static let properties: [ObjectSchemaProperty] = [
-                .init("id", Id.self),
                 .init("accountId", User.Account.Schemas.Id.self),
-                .init("firstName", FirstName.self),
-                .init("lastName", LastName.self),
-                .init("imageKey", ImageKey.self),
-                .init("position", Position.self),
-                .init("publicEmail", PublicEmail.self),
-                .init("phone", Phone.self),
-                .init("web", Web.self),
-                .init("lat", Lat.self),
-                .init("lon", Lon.self),
-                .init("lastLocationUpdate", LastLocationUpdate.self)
+                .init("firstName", FirstName.self, required: false),
+                .init("lastName", LastName.self, required: false),
+                .init("imageKey", ImageKey.self, required: false),
+                .init("position", Position.self, required: false),
+                .init("publicEmail", PublicEmail.self, required: false),
+                .init("phone", Phone.self, required: false),
+                .init("web", Web.self, required: false),
+                .init("lat", Lat.self, required: false),
+                .init("lon", Lon.self, required: false),
+                .init("lastLocationUpdate", LastLocationUpdate.self, required: false)
             ]
         }
 

@@ -16,9 +16,9 @@ extension User.Profile {
         }
 
         enum Identified: PathItem {
-            static let path: Path = Main.path / Parameters.Id.path
+            static let path: Path = Main.path / Parameters.AccountId.path
             static let parameters: [Parameter.Type] = [
-                Parameters.Id.self
+                Parameters.AccountId.self
             ]
             static let delete: Operation.Type? = Operations.Delete.self
             static let get: Operation.Type? = Operations.Detail.self
@@ -34,9 +34,9 @@ extension User.Profile {
             }
 
             enum Identified: PathItem {
-                static let path: Path = Main.path / Parameters.Id.path
+                static let path: Path = Main.path / Parameters.AccountId.path
                 static let parameters: [Parameter.Type] = [
-                    Parameters.Id.self
+                    Parameters.AccountId.self
                 ]
                 static let delete: Operation.Type? = Operations.Delete.self
                 static let get: Operation.Type? = Operations.Detail.self

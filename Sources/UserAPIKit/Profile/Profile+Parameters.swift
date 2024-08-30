@@ -4,10 +4,10 @@ extension User.Profile {
 
     public enum Parameters: Component {
 
-        public enum Id: PathParameter {
-            public static let name = "profileId"
-            public static let description = "User profile identifier"
-            public static let schema: Schema.Type = Schemas.Id.self
+        public enum AccountId: PathParameter {
+            public static let name = "accountId"
+            public static let description = "User account identifier"
+            public static let schema: Schema.Type = User.Account.Schemas.Id.self
         }
 
         enum List {

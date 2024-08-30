@@ -8,9 +8,9 @@ extension User.Profile {
         public enum Me: Operation {
             public static let security: [SecurityScheme.Type] = .shared
             public static let tag: Tag.Type = Tags.Main.self
-            public static let summary = "Current user profile detail"
+            public static let summary = "Current account's user profile detail"
             public static let description = """
-                Get the details of the currently logged in user profile
+                Get the details of the currently logged in account's user profile
                 """
             public static let responses: [OperationResponse] = [
                 .ok(Responses.Detail.self),

@@ -61,21 +61,21 @@ extension User.Oauth {
                 "uiu9879khh"
             ]
         }
-        
+
         enum AccessToken: TextSchema {
             static let description = "Access token aka JWT"
             static let examples = [
                 "uiu9879khh.rtzrtz.6hdhfgh"
             ]
         }
-        
+
         enum TokenType: TextSchema {
             static let description = "Access token type"
             static let examples = [
                 "Bearer"
             ]
         }
-        
+
         enum ExpiresIn: IntSchema {
             static let description = "Expires in"
             static let minimumValue: Int? = 3600
@@ -87,16 +87,16 @@ extension User.Oauth {
                 "http://localhost:8080/redirect?code=asdasfg"
             ]
         }
-        
+
         enum ReturnRedirectUri: BooleanSchema {
             static let description = "return redirect with 200 or 302"
             static let defaultValue = false
         }
-        
+
         enum Redirect200Response: ObjectSchema {
             static let description = ""
             static let properties: [ObjectSchemaProperty] = [
-                .init("redirect_uri", RedirectUri.self, required: false),
+                .init("redirect_uri", RedirectUri.self, required: false)
             ]
         }
 
@@ -115,7 +115,7 @@ extension User.Oauth {
                 ),
             ]
         }
-        
+
         enum TokenPostRequest: ObjectSchema {
             static let description = ""
             static let properties: [ObjectSchemaProperty] = [

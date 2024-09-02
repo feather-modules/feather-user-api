@@ -10,7 +10,7 @@ extension User.Oauth {
                 Headers.Location.self
             ]
         }
-        
+
         enum Redirect200Response: JSONResponse {
             static let description = "Redirect response"
             static let schema: Schema.Type = Schemas.Redirect200Response.self

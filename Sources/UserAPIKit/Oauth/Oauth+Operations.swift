@@ -14,7 +14,7 @@ extension User.Oauth {
                 Parameters.Scope.self,
                 Parameters.State.self,
                 Parameters.ResponseType.self,
-                Parameters.ReturnRedirectUri.self
+                Parameters.ReturnRedirectUri.self,
             ]
             static let responses: [OperationResponse] = [
                 .ok(Responses.Redirect200Response.self),
@@ -30,7 +30,7 @@ extension User.Oauth {
             static let summary = "get authorize code"
             static let description =
                 "get authorize code and return it with redirect"
-            
+
             static let parameters: [Parameter.Type] = [
                 Parameters.ReturnRedirectUri.self
             ]

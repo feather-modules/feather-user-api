@@ -4,7 +4,7 @@ import SystemAPIKit
 
 extension User.Role {
 
-    enum Schemas {
+    public enum Schemas: Component {
 
         enum Key: TextSchema {
             static let description = "Key of the role"

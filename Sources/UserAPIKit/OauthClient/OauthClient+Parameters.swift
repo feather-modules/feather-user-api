@@ -1,13 +1,13 @@
 import FeatherOpenAPIKit
 
-extension User.Role {
+extension User.OauthClient {
 
-    public enum Parameters: Component {
+    public enum Parameters {
 
-        enum Key: PathParameter {
-            static let name = "roleKey"
-            static let description = "User role key"
-            static let schema: Schema.Type = Schemas.Key.self
+        public enum ClientId: PathParameter {
+            public static let name = "clientId"
+            public static let description = "OauthClient identifier"
+            public static let schema: Schema.Type = Schemas.ClientId.self
         }
 
         enum List {

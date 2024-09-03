@@ -3,31 +3,31 @@ import FeatherOpenAPIKit
 
 extension User.Account {
 
-    enum Operations {
+    public enum Operations {
 
-        enum Me: Operation {
-            static let security: [SecurityScheme.Type] = .shared
-            static let tag: Tag.Type = Tags.Main.self
-            static let summary = "Current user account details"
-            static let description = """
+        public enum Me: Operation {
+            public static let security: [SecurityScheme.Type] = .shared
+            public static let tag: Tag.Type = Tags.Main.self
+            public static let summary = "Current user account details"
+            public static let description = """
                 Get the details of the currently logged in user account based on the auth token.
                 """
-            static let responses: [OperationResponse] = [
+            public static let responses: [OperationResponse] = [
                 .ok(Responses.Detail.self),
                 .unauthorized,
             ]
         }
 
-        enum List: Operation {
-            static let security: [SecurityScheme.Type] = .shared
-            static let tag: Tag.Type = Tags.Main.self
-            static let summary = "List User Accounts"
-            static let description = "List available User Accounts"
-            static let parameters: [Parameter.Type] =
+        public enum List: Operation {
+            public static let security: [SecurityScheme.Type] = .shared
+            public static let tag: Tag.Type = Tags.Main.self
+            public static let summary = "List User Accounts"
+            public static let description = "List available User Accounts"
+            public static let parameters: [Parameter.Type] =
                 [
                     Parameters.List.Sort.self
                 ] + Feather.Core.Parameters.List.parameters
-            static let responses: [OperationResponse] = [
+            public static let responses: [OperationResponse] = [
                 .ok(Responses.List.self),
                 .badRequest,
                 .unauthorized,
@@ -35,14 +35,14 @@ extension User.Account {
             ]
         }
 
-        enum Create: Operation {
-            static let security: [SecurityScheme.Type] = .shared
-            static let tag: Tag.Type = Tags.Main.self
-            static let summary = "Create a User Account"
-            static let description = "Creates a new User Account"
-            static let requestBody: RequestBody.Type? = RequestBodies
+        public enum Create: Operation {
+            public static let security: [SecurityScheme.Type] = .shared
+            public static let tag: Tag.Type = Tags.Main.self
+            public static let summary = "Create a User Account"
+            public static let description = "Creates a new User Account"
+            public static let requestBody: RequestBody.Type? = RequestBodies
                 .Create.self
-            static let responses: [OperationResponse] = [
+            public static let responses: [OperationResponse] = [
                 .ok(Responses.Detail.self),
                 .badRequest,
                 .unauthorized,
@@ -52,12 +52,13 @@ extension User.Account {
             ]
         }
 
-        enum Delete: Operation {
-            static let security: [SecurityScheme.Type] = .shared
-            static let tag: Tag.Type = Tags.Main.self
-            static let summary = "Delete one User Account"
-            static let description = "Delete one User Account using identifier"
-            static let responses: [OperationResponse] = [
+        public enum Delete: Operation {
+            public static let security: [SecurityScheme.Type] = .shared
+            public static let tag: Tag.Type = Tags.Main.self
+            public static let summary = "Delete one User Account"
+            public static let description =
+                "Delete one User Account using identifier"
+            public static let responses: [OperationResponse] = [
                 .noContent,
                 .badRequest,
                 .unauthorized,
@@ -69,12 +70,12 @@ extension User.Account {
 
         // MARK: -
 
-        enum Detail: Operation {
-            static let security: [SecurityScheme.Type] = .shared
-            static let tag: Tag.Type = Tags.Main.self
-            static let summary = "User Account details"
-            static let description = "Get the details of a User Account"
-            static let responses: [OperationResponse] = [
+        public enum Detail: Operation {
+            public static let security: [SecurityScheme.Type] = .shared
+            public static let tag: Tag.Type = Tags.Main.self
+            public static let summary = "User Account details"
+            public static let description = "Get the details of a User Account"
+            public static let responses: [OperationResponse] = [
                 .ok(Responses.Detail.self),
                 .badRequest,
                 .unauthorized,
@@ -83,14 +84,14 @@ extension User.Account {
             ]
         }
 
-        enum Update: Operation {
-            static let security: [SecurityScheme.Type] = .shared
-            static let tag: Tag.Type = Tags.Main.self
-            static let summary = "Update a User Account"
-            static let description = "Updates a User Account"
-            static let requestBody: RequestBody.Type? = RequestBodies
+        public enum Update: Operation {
+            public static let security: [SecurityScheme.Type] = .shared
+            public static let tag: Tag.Type = Tags.Main.self
+            public static let summary = "Update a User Account"
+            public static let description = "Updates a User Account"
+            public static let requestBody: RequestBody.Type? = RequestBodies
                 .Update.self
-            static let responses: [OperationResponse] = [
+            public static let responses: [OperationResponse] = [
                 .ok(Responses.Detail.self),
                 .badRequest,
                 .unauthorized,
@@ -101,14 +102,14 @@ extension User.Account {
             ]
         }
 
-        enum Patch: Operation {
-            static let security: [SecurityScheme.Type] = .shared
-            static let tag: Tag.Type = Tags.Main.self
-            static let summary = "Patch a User Account"
-            static let description = "Patch a given User Account"
-            static let requestBody: RequestBody.Type? = RequestBodies
+        public enum Patch: Operation {
+            public static let security: [SecurityScheme.Type] = .shared
+            public static let tag: Tag.Type = Tags.Main.self
+            public static let summary = "Patch a User Account"
+            public static let description = "Patch a given User Account"
+            public static let requestBody: RequestBody.Type? = RequestBodies
                 .Patch.self
-            static let responses: [OperationResponse] = [
+            public static let responses: [OperationResponse] = [
                 .ok(Responses.Detail.self),
                 .badRequest,
                 .unauthorized,

@@ -127,6 +127,7 @@ extension Oauth.Auth {
                 .init("client_secret", ClientSecret.self, required: false),
                 .init("code", Code.self, required: false),
                 .init("redirect_uri", RedirectUri.self, required: false),
+                .init("scope", Scope.self, required: false),
             ]
         }
 

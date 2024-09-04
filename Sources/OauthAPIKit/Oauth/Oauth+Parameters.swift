@@ -1,6 +1,6 @@
 import FeatherOpenAPIKit
 
-extension User.Oauth {
+extension Oauth {
 
     enum Parameters {
 

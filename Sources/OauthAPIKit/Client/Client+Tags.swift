@@ -1,10 +1,10 @@
 import FeatherOpenAPIKit
 
-extension User.OauthClient {
+extension Oauth.Client {
 
     enum Tags {
         enum Main: Tag {
-            static let name = "User - OauthClient"
+            static let name = "Oauth - Client"
         }
     }
 }

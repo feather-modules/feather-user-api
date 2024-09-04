@@ -1,6 +1,6 @@
 import FeatherOpenAPIKit
 
-extension Oauth {
+extension Oauth.Auth {
 
     enum PathItems {
 

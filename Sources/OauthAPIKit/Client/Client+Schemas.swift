@@ -1,7 +1,7 @@
 import FeatherAPIKit
 import FeatherOpenAPIKit
 
-extension User.OauthClient {
+extension Oauth.Client {
 
     enum Schemas {
 

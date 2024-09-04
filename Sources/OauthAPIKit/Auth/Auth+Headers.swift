@@ -1,7 +1,7 @@
 import FeatherOpenAPIKit
 import OpenAPIKit
 
-extension Oauth {
+extension Oauth.Auth {
 
     public enum Headers: Component {
 

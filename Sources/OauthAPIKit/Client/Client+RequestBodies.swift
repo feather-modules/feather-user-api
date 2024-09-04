@@ -1,6 +1,6 @@
 import FeatherOpenAPIKit
 
-extension User.OauthClient {
+extension Oauth.Client {
 
     enum RequestBodies {
 

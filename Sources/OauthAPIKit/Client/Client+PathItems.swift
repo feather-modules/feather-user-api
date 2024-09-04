@@ -1,11 +1,11 @@
 import FeatherOpenAPIKit
 
-extension User.OauthClient {
+extension Oauth.Client {
 
     enum PathItems {
 
         enum Main: PathItem {
-            static let path: Path = User.OauthClient.path
+            static let path: Path = Oauth.Client.path
             static let get: Operation.Type? = Operations.List.self
             static let post: Operation.Type? = Operations.Create.self
         }

@@ -12,6 +12,7 @@ let package = Package(
     ],
     products: [
         .library(name: "UserAPIKit", targets: ["UserAPIKit"]),
+        .library(name: "OauthAPIKit", targets: ["OauthAPIKit"]),
     ],
     dependencies: [
         .package(url: "https://github.com/feather-framework/feather-openapi-kit", .upToNextMinor(from: "0.9.8")),
@@ -33,19 +34,32 @@ let package = Package(
             ]
         ),
         
+        .target(
+            name: "OauthAPIKit",
+            dependencies: [
+                .product(name: "FeatherOpenAPIKit", package: "feather-openapi-kit"),
+                .product(name: "FeatherAPIKit", package: "feather-api-kit"),
+                .target(name: "UserAPIKit"),
+            ],
+            plugins: [
+                .plugin(name: "FeatherOpenAPIGenerator", package: "feather-openapi-kit")
+            ]
+        ),
+        
         .executableTarget(
             name: "TestAPIGenerator",
             dependencies: [
                 .product(name: "Yams", package: "Yams"),
                 .product(name: "FeatherOpenAPIKit", package: "feather-openapi-kit"),
                 .target(name: "UserAPIKit"),
+                .target(name: "OauthAPIKit"),
             ]
         ),
         
         .testTarget(
             name: "UserAPIKitTests",
             dependencies: [
-                .target(name: "UserAPIKit")
+                .target(name: "UserAPIKit"),
             ]
         ),
     ]

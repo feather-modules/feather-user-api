@@ -1,6 +1,7 @@
 import FeatherAPIKit
 import FeatherOpenAPIKit
 import Foundation
+import OauthAPIKit
 import OpenAPIKit
 import SystemAPIKit
 import UserAPIKit
@@ -11,6 +12,7 @@ struct OpenAPIDocument: Document {
         Feather.Core.self,
         System.self,
         User.self,
+        Oauth.self,
     ]
 
     func openAPIDocument() throws -> OpenAPI.Document {

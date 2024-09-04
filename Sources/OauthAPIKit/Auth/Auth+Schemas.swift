@@ -1,7 +1,7 @@
 import FeatherAPIKit
 import FeatherOpenAPIKit
 
-extension Oauth {
+extension Oauth.Auth {
 
     enum Schemas {
 
@@ -43,6 +43,13 @@ extension Oauth {
 
         enum ResponseType: TextSchema {
             static let description = "Request-specific data"
+            static let examples = [
+                "code"
+            ]
+        }
+
+        enum UserId: TextSchema {
+            static let description = "Bearar token for checking the accountId"
             static let examples = [
                 "code"
             ]
@@ -108,11 +115,7 @@ extension Oauth {
                 .init("scope", Scope.self, required: false),
                 .init("state", State.self, required: false),
                 .init("response_type", ResponseType.self, required: false),
-                .init(
-                    "user_id",
-                    User.Account.Schemas.Id.self,
-                    required: false
-                ),
+                .init("user_id", UserId.self, required: false),
             ]
         }
 

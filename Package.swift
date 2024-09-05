@@ -45,7 +45,7 @@ let package = Package(
         .testTarget(
             name: "UserAPIKitTests",
             dependencies: [
-                .target(name: "UserAPIKit")
+                .target(name: "UserAPIKit"),
             ]
         ),
     ]

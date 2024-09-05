@@ -10,7 +10,7 @@ struct OpenAPIDocument: Document {
     let components: [Component.Type] = [
         Feather.Core.self,
         System.self,
-        User.self
+        User.self,
     ]
 
     func openAPIDocument() throws -> OpenAPI.Document {

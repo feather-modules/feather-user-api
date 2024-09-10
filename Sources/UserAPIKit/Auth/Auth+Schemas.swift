@@ -42,7 +42,7 @@ extension User.Auth {
                 .init("password", Password.self),
             ]
         }
-        
+
         enum Permissions: ArraySchema {
             static let items: Schema.Type = System.Permission.Schemas.Key.self
             static let description = ""

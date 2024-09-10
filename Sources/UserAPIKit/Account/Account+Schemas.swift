@@ -157,7 +157,7 @@ extension User.Account {
                 .init("firstName", FirstName.self, required: false),
                 .init("lastName", LastName.self, required: false),
                 .init("imageKey", ImageKey.self, required: false),
-                .init("roles", Roles.self)
+                .init("roles", Roles.self),
             ]
         }
 
@@ -169,7 +169,7 @@ extension User.Account {
                 .init("firstName", FirstName.self, required: false),
                 .init("lastName", LastName.self, required: false),
                 .init("imageKey", ImageKey.self, required: false),
-                .init("roleKeys", RoleKeys.self)
+                .init("roleKeys", RoleKeys.self),
             ]
         }
 

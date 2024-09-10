@@ -5,9 +5,9 @@ extension User.AccountInvitationType {
 
     public enum Schemas {
 
-        public enum Id: IDSchema {
+        public enum Key: IDSchema {
             public static let description =
-                "Unique user account invitation identifier"
+                "Unique user account invitation type identifier"
         }
 
         enum Title: TextSchema {
@@ -25,7 +25,7 @@ extension User.AccountInvitationType {
                 public static let description =
                     "User account invitation type list item"
                 public static let properties: [ObjectSchemaProperty] = [
-                    .init("id", Id.self),
+                    .init("key", Key.self),
                     .init("title", Title.self),
                 ]
             }
@@ -55,7 +55,7 @@ extension User.AccountInvitationType {
         public enum Reference: ObjectSchema {
             public static let description = ""
             public static let properties: [ObjectSchemaProperty] = [
-                .init("id", Id.self),
+                .init("key", Key.self),
                 .init("title", Title.self),
             ]
         }
@@ -63,19 +63,12 @@ extension User.AccountInvitationType {
         public enum Detail: ObjectSchema {
             public static let description = ""
             public static let properties: [ObjectSchemaProperty] = [
-                .init("id", Id.self),
+                .init("key", Key.self),
                 .init("title", Title.self),
             ]
         }
 
         public enum Create: ObjectSchema {
-            public static let description = ""
-            public static let properties: [ObjectSchemaProperty] = [
-                .init("title", Title.self)
-            ]
-        }
-
-        public enum Update: ObjectSchema {
             public static let description = ""
             public static let properties: [ObjectSchemaProperty] = [
                 .init("title", Title.self)

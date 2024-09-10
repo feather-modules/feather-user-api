@@ -102,6 +102,11 @@ extension User.Account {
             public static let items: Schema.Type = User.Role.Schemas.Key.self
         }
 
+        enum Permissions: ArraySchema {
+            static let items: Schema.Type = System.Permission.Schemas.Key.self
+            static let description = ""
+        }
+
         // MARK: - list
 
         public enum List: ObjectSchema {
@@ -158,6 +163,7 @@ extension User.Account {
                 .init("lastName", LastName.self, required: false),
                 .init("imageKey", ImageKey.self, required: false),
                 .init("roles", Roles.self),
+                .init("permissions", Permissions.self),
             ]
         }
 

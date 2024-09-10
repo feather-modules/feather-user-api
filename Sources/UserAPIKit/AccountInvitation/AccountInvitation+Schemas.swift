@@ -31,6 +31,19 @@ extension User.AccountInvitation {
             ]
         }
 
+        public enum InvitationTypeKeys: ArraySchema {
+            public static let description = "Invitation type keys"
+            public static let items: Schema.Type = User.AccountInvitationType
+                .Schemas.Key.self
+        }
+
+        public enum InvitationTypes: ArraySchema {
+            public static let description = "Invitation types"
+            public static let items: Schema.Type = User.AccountInvitationType
+                .Schemas.Reference
+                .self
+        }
+
         // MARK: - list
 
         public enum List: ObjectSchema {
@@ -81,13 +94,15 @@ extension User.AccountInvitation {
                 .init("email", Email.self),
                 .init("token", Token.self),
                 .init("expiration", Expiration.self),
+                .init("invitationTypes", InvitationTypes.self),
             ]
         }
 
         public enum Create: ObjectSchema {
             public static let description = ""
             public static let properties: [ObjectSchemaProperty] = [
-                .init("email", Email.self)
+                .init("email", Email.self),
+                .init("invitationTypeKeys", InvitationTypeKeys.self),
             ]
         }
 

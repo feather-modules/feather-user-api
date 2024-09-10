@@ -1,4 +1,5 @@
 import FeatherOpenAPIKit
+import SystemAPIKit
 
 extension User.Auth {
 
@@ -42,11 +43,17 @@ extension User.Auth {
             ]
         }
 
+        enum Permissions: ArraySchema {
+            static let items: Schema.Type = System.Permission.Schemas.Key.self
+            static let description = ""
+        }
+
         enum Response: ObjectSchema {
             static let description = "User auth response"
             static let properties: [ObjectSchemaProperty] = [
                 .init("account", User.Account.Schemas.Detail.self),
                 .init("token", Token.self),
+                .init("permissions", Permissions.self),
             ]
         }
 

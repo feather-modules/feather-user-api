@@ -102,11 +102,6 @@ extension User.Account {
             public static let items: Schema.Type = User.Role.Schemas.Key.self
         }
 
-        enum Permissions: ArraySchema {
-            static let items: Schema.Type = System.Permission.Schemas.Key.self
-            static let description = ""
-        }
-
         // MARK: - list
 
         public enum List: ObjectSchema {
@@ -162,19 +157,7 @@ extension User.Account {
                 .init("firstName", FirstName.self, required: false),
                 .init("lastName", LastName.self, required: false),
                 .init("imageKey", ImageKey.self, required: false),
-                .init("position", Position.self, required: false),
-                .init("publicEmail", PublicEmail.self, required: false),
-                .init("phone", Phone.self, required: false),
-                .init("web", Web.self, required: false),
-                .init("lat", Lat.self, required: false),
-                .init("lon", Lon.self, required: false),
-                .init(
-                    "lastLocationUpdate",
-                    LastLocationUpdate.self,
-                    required: false
-                ),
                 .init("roles", Roles.self),
-                .init("permissions", Permissions.self),
             ]
         }
 
@@ -186,19 +169,7 @@ extension User.Account {
                 .init("firstName", FirstName.self, required: false),
                 .init("lastName", LastName.self, required: false),
                 .init("imageKey", ImageKey.self, required: false),
-                .init("position", Position.self, required: false),
-                .init("publicEmail", PublicEmail.self, required: false),
-                .init("phone", Phone.self, required: false),
-                .init("web", Web.self, required: false),
-                .init("lat", Lat.self, required: false),
-                .init("lon", Lon.self, required: false),
-                .init(
-                    "lastLocationUpdate",
-                    LastLocationUpdate.self,
-                    required: false
-                ),
                 .init("roleKeys", RoleKeys.self),
-                .init("permissions", Permissions.self),
             ]
         }
 
@@ -209,17 +180,6 @@ extension User.Account {
                 .init("firstName", FirstName.self, required: false),
                 .init("lastName", LastName.self, required: false),
                 .init("imageKey", ImageKey.self, required: false),
-                .init("position", Position.self, required: false),
-                .init("publicEmail", PublicEmail.self, required: false),
-                .init("phone", Phone.self, required: false),
-                .init("web", Web.self, required: false),
-                .init("lat", Lat.self, required: false),
-                .init("lon", Lon.self, required: false),
-                .init(
-                    "lastLocationUpdate",
-                    LastLocationUpdate.self,
-                    required: false
-                ),
                 .init("password", Password.self, required: false),
                 .init("roleKeys", RoleKeys.self),
             ]
@@ -232,17 +192,6 @@ extension User.Account {
                 .init("firstName", FirstName.self, required: false),
                 .init("lastName", LastName.self, required: false),
                 .init("imageKey", ImageKey.self, required: false),
-                .init("position", Position.self, required: false),
-                .init("publicEmail", PublicEmail.self, required: false),
-                .init("phone", Phone.self, required: false),
-                .init("web", Web.self, required: false),
-                .init("lat", Lat.self, required: false),
-                .init("lon", Lon.self, required: false),
-                .init(
-                    "lastLocationUpdate",
-                    LastLocationUpdate.self,
-                    required: false
-                ),
                 .init("password", Password.self, required: false),
                 .init("roleKeys", RoleKeys.self, required: false),
             ]

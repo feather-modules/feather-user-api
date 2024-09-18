@@ -26,7 +26,7 @@ extension User.Role {
                 "Manager role"
             ]
         }
-        
+
         enum RoleType: EnumSchema {
             static let description = "Role type"
             static let allowedValues = ["open", "protected"]

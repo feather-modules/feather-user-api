@@ -27,6 +27,14 @@ extension User.Role {
             ]
         }
 
+        enum RoleType: EnumSchema {
+            static let description = "Role type"
+            static let allowedValues = ["open", "protected"]
+            static let examples = [
+                "open"
+            ]
+        }
+
         // MARK: -
 
         enum Reference: ObjectSchema {
@@ -88,6 +96,7 @@ extension User.Role {
                 .init("key", Key.self),
                 .init("name", Name.self),
                 .init("notes", Notes.self, required: false),
+                .init("type", RoleType.self),
                 .init("permissions", Permissions.self),
             ]
         }
@@ -98,6 +107,7 @@ extension User.Role {
                 .init("key", Key.self),
                 .init("name", Name.self),
                 .init("notes", Notes.self, required: false),
+                .init("type", RoleType.self, required: false),
                 .init("permissionKeys", PermissionKeys.self),
             ]
         }
@@ -108,6 +118,7 @@ extension User.Role {
                 .init("key", Key.self),
                 .init("name", Name.self),
                 .init("notes", Notes.self, required: false),
+                .init("type", RoleType.self, required: false),
                 .init("permissionKeys", PermissionKeys.self),
             ]
         }
@@ -118,6 +129,7 @@ extension User.Role {
                 .init("key", Key.self, required: false),
                 .init("name", Name.self, required: false),
                 .init("notes", Notes.self, required: false),
+                .init("type", RoleType.self, required: false),
                 .init("permissionKeys", PermissionKeys.self, required: false),
             ]
         }

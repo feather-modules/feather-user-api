@@ -118,6 +118,7 @@ extension User.Account {
                     .init("email", Email.self),
                     .init("firstName", FirstName.self, required: false),
                     .init("lastName", LastName.self, required: false),
+                    .init("imageKey", ImageKey.self, required: false),
                 ]
             }
 
@@ -151,6 +152,7 @@ extension User.Account {
                 .init("email", Email.self),
                 .init("firstName", FirstName.self, required: false),
                 .init("lastName", LastName.self, required: false),
+                .init("imageKey", ImageKey.self, required: false),
             ]
         }
 

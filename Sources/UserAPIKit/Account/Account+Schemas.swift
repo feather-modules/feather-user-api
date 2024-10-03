@@ -106,6 +106,17 @@ extension User.Account {
             static let items: Schema.Type = System.Permission.Schemas.Key.self
             static let description = ""
         }
+        
+        public enum Groups: ArraySchema {
+            public static let description = "User groups"
+            public static let items: Schema.Type = User.Group.Schemas.Reference
+                .self
+        }
+        
+        public enum GroupIds: ArraySchema {
+            public static let description = "User group ids"
+            public static let items: Schema.Type = User.Group.Schemas.Id.self
+        }
 
         // MARK: - list
 
@@ -166,6 +177,7 @@ extension User.Account {
                 .init("imageKey", ImageKey.self, required: false),
                 .init("roles", Roles.self),
                 .init("permissions", Permissions.self),
+                .init("groups", Groups.self),
             ]
         }
 
@@ -178,6 +190,7 @@ extension User.Account {
                 .init("lastName", LastName.self, required: false),
                 .init("imageKey", ImageKey.self, required: false),
                 .init("roleKeys", RoleKeys.self),
+                .init("groupIds", GroupIds.self),
             ]
         }
 
@@ -190,6 +203,7 @@ extension User.Account {
                 .init("imageKey", ImageKey.self, required: false),
                 .init("password", Password.self, required: false),
                 .init("roleKeys", RoleKeys.self),
+                .init("groupIds", GroupIds.self),
             ]
         }
 
@@ -202,6 +216,7 @@ extension User.Account {
                 .init("imageKey", ImageKey.self, required: false),
                 .init("password", Password.self, required: false),
                 .init("roleKeys", RoleKeys.self, required: false),
+                .init("groupIds", GroupIds.self, required: false),
             ]
         }
     }

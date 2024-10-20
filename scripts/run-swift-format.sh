@@ -22,7 +22,7 @@ git -C "${REPO_ROOT}" ls-files -z '*.swift' | xargs -0 "${SWIFTFORMAT_BIN}" "${F
 if [ "${SWIFT_FORMAT_RC}" -ne 0 ]; then
   fatal "❌ Running swift-format produced errors.
   To fix, run the following command:
-    % ./scripts/run-swift-format.sh --fix
+    % ./scripts/run-swift-format.sh fix
   "
 fi
 

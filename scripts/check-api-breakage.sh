@@ -17,11 +17,11 @@ if [ -n "${REV_LIST}" ]; then
     LATEST_TAG=$(git describe --tags "${REV_LIST}")
 
     # Run the Swift package API breakage diagnosis tool and redirect output to a log file
-    swift package diagnose-api-breaking-changes "$LATEST_TAG" cmd > api-breakage-output.log || {
-        NUM=$(cmd api-breakage-output.log|grep -c)
+    swift package diagnose-api-breaking-changes "$LATEST_TAG" 2>&1 > api-breakage-output.log || { 
+        NUM=$(cat api-breakage-output.log|grep "💔"|wc -l)
         log "❌ Found ${NUM} API breakages."
         cat api-breakages.log
-        exit 0
+        exit 0;
     }
     log "✅ Found no API breakages."
 else
